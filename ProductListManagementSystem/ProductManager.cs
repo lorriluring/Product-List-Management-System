@@ -21,14 +21,14 @@ public class ProductManager
     public void ShowProducts()
     {
         Console.WriteLine("\nPRODUCT LIST\n");
-        Console.WriteLine($"{"Category",-20} | {"Name",-20} | {"Price",12}");
-        Console.WriteLine(new string('-', 60));
+        Console.WriteLine($"{"Category",-12} | {"Name",-12} | {"Price",8}");
+        Console.WriteLine(new string('-', 40));
 
         // Sort using LINQ orderby method to sort the products by price in ascending order
         foreach (Product product in products.OrderBy(product => product.Price))
         {
             Console.WriteLine(
-                $"{product.Category,-20} | {product.Name,-20} | {product.Price,12:C}");
+                $"{product.Category,-12} | {product.Name,-12} | {product.Price,8:C}");
         }
     }
 
