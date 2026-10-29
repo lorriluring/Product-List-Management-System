@@ -3,6 +3,7 @@
     // This class represents a product with a category, name, and price.
     public class Product
     {
+        // Constructor to initialize a product with a category, name, and price.
         public Product(string category, string name, decimal price)
         {
             Category = category;
