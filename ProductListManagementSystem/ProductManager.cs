@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-using System.Diagnostics.CodeAnalysis;
-
-namespace ProductListManagementSystem;
+﻿namespace ProductListManagementSystem;
 
 // This class is responsible for managing the list of products in the system.
 public class ProductManager
 {
+    // A list to store the products in the system, initialized as an empty list.
     public readonly List<Product> products = [];
 
     // This method adds a new product to the list of products.
@@ -20,7 +15,10 @@ public class ProductManager
     // This method displays all the products in the list from lowest to highest price in a formatted table.
     public void ShowProducts()
     {
-        Console.WriteLine("\nPRODUCT LIST\n");
+        // Display the product list header with dark yellow text for better visibility
+        Console.ForegroundColor = ConsoleColor.DarkYellow;
+        Console.WriteLine("\n========== PRODUCT LIST ==========\n");
+        Console.ResetColor();
         Console.WriteLine($"{"Category",-12} | {"Name",-12} | {"Price",8}");
         Console.WriteLine(new string('-', 40));
 
@@ -36,5 +34,20 @@ public class ProductManager
     public decimal CalculateTotal()
     {
         return products.Sum(product => product.Price);
+    }
+
+    // This method searches for existing products in the list by name or category and returns a list of matching products.
+    public List<Product> SearchProduct(string term)
+    {
+        if (string.IsNullOrWhiteSpace(term))
+            return [];
+
+        // Use LINQ to filter the products list based on the search term, ignoring case sensitivity, and return a sorted list of matching products by price
+        return products
+                .Where(p =>
+                p.Name.Contains(term, StringComparison.OrdinalIgnoreCase) ||
+                p.Category.Contains(term, StringComparison.OrdinalIgnoreCase))
+                .OrderBy(p => p.Price)
+                .ToList();
     }
 }
