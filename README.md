@@ -88,13 +88,16 @@ Search or press Enter to continue adding products:
 ```
 
 ## Screenshots
-
+## Adding a product
 ![Adding a product](screenshots/add-product.png)
 
+## Product list and total price
 ![Product list and total price](screenshots/product-list.png)
 
+## Search results with highlighting
 ![Search results with highlighting](screenshots/search.png)
 
+## Examples of error handling
 ![Error handling](screenshots/errors.png)
 
 ## Team Members
