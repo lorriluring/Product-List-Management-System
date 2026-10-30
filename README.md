@@ -4,7 +4,8 @@
 
 A C# console application for managing a product list. The user enters products with a category, name, and price. The application shows the list sorted by price, calculates the total price, and searches products by name or category.
 
-Built for Checkpoint 2, levels 1 to 4. The project practices object-oriented programming, collections, LINQ, and error handling.
+Built for Weekly miniproject Week 44.
+The project practices object-oriented programming, collections, LINQ, and error handling.
 
 ## Features
 
